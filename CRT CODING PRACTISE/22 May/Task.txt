@@ -1,0 +1,132 @@
+PLACEMENT TRAINING TASK – JDBC BATCH PROCESSING (LEVEL 2)
+
+==================================================
+PROJECT NAME :LIBRARY FINE MANAGEMENT SYSTEM (BATCH PROCESSING)
+Develop a Java JDBC application using Batch Processing to manage library student fine records.
+System should calculate fine based on rules, store all records using batch execution and generate final report.
+==================================================
+DATABASE
+
+CREATE DATABASE library_batch;
+
+USE library_batch;
+
+CREATE TABLE members(
+id INT PRIMARY KEY,
+name VARCHAR(30),
+book_days INT,
+book_returned_days INT,
+membership_type VARCHAR(20),
+fine DOUBLE,
+status VARCHAR(30)
+);
+
+==================================================
+INPUT FORMAT
+==================================================
+
+N
+id name book_days book_returned_days membership_type
+
+Example:
+3
+101 Ravi 10 15 GOLD
+102 Anil 5 12 SILVER
+103 Sara 7 7 GOLD
+
+==================================================
+BUSINESS RULES
+==================================================
+
+RULE 1: CALCULATE DELAY
+delay = book_returned_days - book_days
+
+
+RULE 2: FINE CALCULATION
+
+If delay <= 0
+→ fine = 0
+→ status = "NO FINE"
+
+If delay between 1 to 5
+→ fine = delay * 2
+→ status = "LOW FINE"
+
+If delay between 6 to 10
+→ fine = delay * 5
+→ status = "MEDIUM FINE"
+
+If delay > 10
+→ fine = delay * 10
+→ status = "HIGH FINE"
+
+==================================================
+RULE 3: MEMBERSHIP DISCOUNT
+==================================================
+
+If membership_type = GOLD
+→ reduce fine by 20%
+
+If membership_type = SILVER
+→ reduce fine by 10%
+
+If membership_type = NORMAL
+→ no discount
+
+==================================================
+RULE 4: SPECIAL PENALTY RULE
+==================================================
+
+If book_days > 14 and delay > 5
+→ status = "BLACKLISTED"
+
+(Override all previous status except NO FINE)
+
+==================================================
+COUNTERS TO DISPLAY
+==================================================
+
+Total Records Inserted = ?
+No Fine Members = ?
+Low Fine Members = ?
+Medium Fine Members = ?
+High Fine Members = ?
+Blacklisted Members = ?
+
+==================================================
+JDBC REQUIREMENTS
+==================================================
+
+Use:
+- PreparedStatement
+- addBatch()
+- executeBatch()
+- setAutoCommit(false)
+- commit()
+
+==================================================
+OUTPUT FORMAT (SAMPLE)
+==================================================
+
+Total Records Inserted = 3
+No Fine Members = 1
+Low Fine Members = 1
+Medium Fine Members = 0
+High Fine Members = 0
+Blacklisted Members = 1
+
+==================================================
+HINT (FOR STUDENTS)
+==================================================
+
+1. First calculate delay
+2. Then calculate fine
+3. Then apply membership discount
+4. Then apply blacklist rule
+5. Finally insert into batch
+6. Execute batch and commit
+7. Generate report
+
+==================================================
+END OF TASK
+==================================================

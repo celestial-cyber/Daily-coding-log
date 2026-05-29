@@ -1,0 +1,177 @@
+import java.sql.*;
+
+public class AIPlacementSystem {
+
+    public static void main(String[] args) {
+
+        try {
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            Connection con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3307/AIPlacementSystem",
+                    "root",
+                    ""
+            );
+
+            Statement st = con.createStatement();
+
+            ResultSet rs = st.executeQuery("SELECT * FROM students");
+
+            int size = 100;
+
+            int[] ids = new int[size];
+            String[] names = new String[size];
+            String[] emails = new String[size];
+
+            int[] coding = new int[size];
+            int[] aptitude = new int[size];
+            int[] communication = new int[size];
+
+            double[] cgpa = new double[size];
+
+            int[] projects = new int[size];
+            int[] certifications = new int[size];
+            int[] hackathons = new int[size];
+
+            int[] aiScores = new int[size];
+            String[] categories = new String[size];
+            String[] companies = new String[size];
+            String[] statuses = new String[size];
+
+            int index = 0;
+
+            while (rs.next()) {
+
+                ids[index] = rs.getInt("id");
+                names[index] = rs.getString("name");
+                emails[index] = rs.getString("email");
+
+                coding[index] = rs.getInt("coding");
+                aptitude[index] = rs.getInt("aptitude");
+                communication[index] = rs.getInt("communication");
+
+                cgpa[index] = rs.getDouble("cgpa");
+
+                projects[index] = rs.getInt("projects");
+                certifications[index] = rs.getInt("certifications");
+                hackathons[index] = rs.getInt("hackathons");
+
+                index++;
+            }
+
+            PreparedStatement ps = con.prepareStatement(
+                    "INSERT INTO placement_result VALUES (?, ?, ?, ?, ?, ?, ?)"
+            );
+
+            int superDream = 0;
+            int dream = 0;
+            int service = 0;
+            int mass = 0;
+
+            int highestScore = Integer.MIN_VALUE;
+            int lowestScore = Integer.MAX_VALUE;
+
+            for (int i = 0; i < index; i++) {
+
+                int aiScore =
+                        (coding[i] * 30 / 100)
+                        + (aptitude[i] * 20 / 100)
+                        + (communication[i] * 20 / 100)
+                        + (int)(cgpa[i] * 2)
+                        + (projects[i] * 4)
+                        + (certifications[i] * 3)
+                        + (hackathons[i] * 5);
+
+                aiScores[i] = aiScore;
+
+                if (aiScore > highestScore) {
+                    highestScore = aiScore;
+                }
+
+                if (aiScore < lowestScore) {
+                    lowestScore = aiScore;
+                }
+
+                if (aiScore >= 150) {
+                    categories[i] = "SUPER DREAM";
+                    companies[i] = "Google";
+                    statuses[i] = "Highly Selected";
+                    superDream++;
+                }
+
+                else if (aiScore >= 130) {
+                    categories[i] = "DREAM";
+                    companies[i] = "Amazon";
+                    statuses[i] = "Selected";
+                    dream++;
+                }
+
+                else if (aiScore >= 100) {
+                    categories[i] = "SERVICE";
+                    companies[i] = "Accenture";
+                    statuses[i] = "Eligible";
+                    service++;
+                }
+
+                else {
+                    categories[i] = "MASS";
+                    companies[i] = "TCS";
+                    statuses[i] = "Need Improvement";
+                    mass++;
+                }
+
+                ps.setInt(1, ids[i]);
+                ps.setString(2, names[i]);
+                ps.setString(3, emails[i]);
+                ps.setInt(4, aiScores[i]);
+                ps.setString(5, categories[i]);
+                ps.setString(6, companies[i]);
+                ps.setString(7, statuses[i]);
+
+                ps.executeUpdate();
+            }
+
+            System.out.println("=========================================================");
+            System.out.println("PLACEMENT PREDICTION REPORT");
+            System.out.println("=========================================================");
+
+            System.out.printf(
+                    "%-5s %-10s %-8s %-15s %-15s %-20s%n",
+                    "ID", "NAME", "SCORE", "CATEGORY", "COMPANY", "STATUS"
+            );
+
+            for (int i = 0; i < index; i++) {
+
+                System.out.printf(
+                        "%-5d %-10s %-8d %-15s %-15s %-20s%n",
+                        ids[i],
+                        names[i],
+                        aiScores[i],
+                        categories[i],
+                        companies[i],
+                        statuses[i]
+                );
+            }
+
+            System.out.println("=========================================================");
+
+            System.out.println("TOTAL STUDENTS : " + index);
+            System.out.println("SUPER DREAM : " + superDream);
+            System.out.println("DREAM : " + dream);
+            System.out.println("SERVICE : " + service);
+            System.out.println("MASS : " + mass);
+
+            System.out.println();
+            System.out.println("HIGHEST AI SCORE : " + highestScore);
+            System.out.println("LOWEST AI SCORE : " + lowestScore);
+
+            System.out.println("=========================================================");
+
+            con.close();
+
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}

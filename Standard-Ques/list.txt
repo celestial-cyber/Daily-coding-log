@@ -1,0 +1,171 @@
+## 1. Basic Programs / Conditions
+
+1. Even or odd number
+2. Positive, negative, or zero
+3. Largest among 2 numbers
+4. Largest among 3 numbers
+5. Leap year check
+6. Grade calculator
+7. Calculator using switch case
+8. Check if character is vowel/consonant
+9. Check uppercase/lowercase
+
+---
+
+## 2. Loops & Number Logic
+
+10. Print 1 to N
+11. Print N to 1
+12. Sum of first N natural numbers
+13. Multiplication table
+14. Factorial of a number
+15. Power of a number
+16. Count digits in a number
+17. Reverse a number
+18. Palindrome number
+19. Armstrong number
+20. Prime number check
+21. Print all primes in range
+22. GCD / HCF of two numbers
+23. LCM of two numbers
+24. Fibonacci series
+
+---
+
+## 3. Pattern Problems
+
+25. Square star pattern
+26. Right triangle pattern
+27. Inverted triangle pattern
+28. Pyramid pattern
+29. Diamond pattern
+30. Hollow square
+31. Hollow pyramid
+32. Floyd’s triangle
+33. Pascal triangle
+34. Number pyramid
+35. Character pyramid
+
+---
+
+## 4. Arrays (Basic → Intermediate)
+
+36. Find largest element in array
+37. Find smallest element in array
+38. Sum of array elements
+39. Average of array
+40. Count even and odd elements in array
+41. Find second largest element
+42. Find maximum and minimum together
+43. Check if array is sorted
+44. Reverse an array
+45. Copy one array to another
+46. Merge two arrays
+47. Find duplicate elements in array
+48. Remove duplicates from array
+49. Frequency of elements in array
+50. Missing number in array
+51. Rotate array left/right
+52. Move zeros to end
+53. Union of two arrays
+54. Intersection of arrays
+55. Maximum subarray sum (Kadane’s Algorithm)
+56. Leaders in array
+57. Rearrange positive and negative numbers
+58. Two sum problem
+59. Majority element
+60. Best time to buy and sell stock
+
+---
+
+## 5. Strings
+
+61. String reversal
+62. Palindrome string
+63. Count vowels and consonants
+64. Count words in sentence
+65. Character frequency in string
+66. Remove spaces from string
+67. Convert uppercase to lowercase and vice versa
+68. Find duplicate characters in string
+69. Check anagram strings
+70. Find longest word in sentence
+71. String compression
+72. Remove duplicates from string
+73. First non-repeating character
+74. Longest common prefix
+75. Valid parentheses
+76. Reverse words in sentence
+77. String rotation check
+78. Longest substring without repeating characters
+
+---
+
+## 6. Recursion & Backtracking Basics
+
+79. Factorial using recursion
+80. Fibonacci using recursion
+81. Sum of digits using recursion
+82. Reverse string using recursion
+83. Binary search using recursion
+84. Tower of Hanoi
+85. Generate subsets
+86. String permutations
+
+---
+
+## 7. Searching Algorithms
+
+87. Linear search
+88. Binary search
+89. Lower bound and upper bound
+
+---
+
+## 8. Sorting Algorithms
+
+90. Bubble sort
+91. Selection sort
+92. Insertion sort
+93. Merge sort
+94. Quick sort
+95. Count sort
+
+---
+
+## 9. Hashing / HashMap
+
+96. Frequency count using hashmap
+97. First repeating element
+98. Pair with given sum
+99. Count distinct elements
+100. Longest consecutive sequence
+
+---
+
+## 10. Sliding Window Problems
+
+101. Maximum sum subarray of size K
+102. Longest substring without repeating characters
+103. Maximum consecutive ones
+104. Minimum window substring
+
+---
+
+## 11. Matrix Problems
+
+105. Matrix transpose
+106. Matrix multiplication
+107. Spiral matrix traversal
+108. Rotate matrix by 90 degrees
+109. Row with maximum 1s
+
+---
+
+## 12. Linked List Basics
+
+110. Reverse linked list
+111. Detect cycle in linked list
+112. Find middle node in linked list
+113. Merge two linked lists
+

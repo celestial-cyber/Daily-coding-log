@@ -1,0 +1,575 @@
+ ADVANCED MINI PROJECT
+ AI SMART PLACEMENT PREDICTION SYSTEM
+ (Java + JDBC + MySQL + Arrays)
+
+QUESTION 1:-----------------------------------------------------------------------------------------------------------------
+
+Develop an AI-Based Placement Prediction System using Java and MySQL JDBC.
+
+The system should process an entire student batch and generate placement predictions automatically.
+
+⸻
+
+DATABASE CREATION
+
+CREATE DATABASE AIPlacementSystem;
+
+USE AIPlacementSystem;
+
+⸻
+
+TABLE 1 : students
+
+CREATE TABLE students(
+id INT PRIMARY KEY,
+name VARCHAR(50),
+email VARCHAR(100),
+coding INT,
+aptitude INT,
+communication INT,
+cgpa DOUBLE,
+projects INT,
+certifications INT,
+hackathons INT
+);
+
+INSERT INTO students VALUES
+
+(101,‘Arjun’,‘arjun@gmail.com’,95,85,80,9.1,4,5,2),
+(102,‘Rahul’,‘rahul@gmail.com’,80,75,70,8.0,3,2,1),
+(103,‘Sneha’,‘sneha@gmail.com’,98,90,95,9.7,5,6,4),
+(104,‘Varun’,‘varun@gmail.com’,60,70,65,7.0,2,1,0),
+(105,‘Kiran’,‘kiran@gmail.com’,88,84,80,8.5,3,4,2),
+(106,‘Ayesha’,‘ayesha@gmail.com’,72,76,78,7.6,2,2,1),
+(107,‘Rohit’,‘rohit@gmail.com’,99,95,90,9.9,5,6,5),
+(108,‘Deepika’,‘deepika@gmail.com’,55,60,62,6.8,1,1,0),
+(109,‘Ajay’,‘ajay@gmail.com’,86,82,88,8.2,3,3,2),
+(110,‘Pooja’,‘pooja@gmail.com’,78,80,76,7.8,2,3,1);
+
+⸻
+
+TABLE 2 : companies
+
+CREATE TABLE companies(
+company_id INT PRIMARY KEY,
+company_name VARCHAR(50),
+min_ai_score INT,
+package_lpa DOUBLE
+);
+
+INSERT INTO companies VALUES
+
+(1,‘Google’,150,35),
+(2,‘Amazon’,140,30),
+(3,‘Microsoft’,145,32),
+(4,‘Adobe’,135,24),
+(5,‘Accenture’,110,8),
+(6,‘IBM’,100,7),
+(7,‘Capgemini’,95,6),
+(8,‘Infosys’,90,5),
+(9,‘TCS’,85,4),
+(10,‘Wipro’,80,4);
+
+⸻
+
+TABLE 3 : placement_result
+
+CREATE TABLE placement_result(
+student_id INT,
+student_name VARCHAR(50),
+email VARCHAR(100),
+ai_score INT,
+category VARCHAR(30),
+company_type VARCHAR(100),
+final_status VARCHAR(50)
+);
+
+⸻
+
+RULES TO IMPLEMENT
+
+Rule 1:
+Fetch ALL student records.
+
+SELECT * FROM students;
+
+⸻
+
+Rule 2:
+Calculate AI Score.
+
+Formula:
+
+AI Score =
+30% Coding
++
+20% Aptitude
++
+20% Communication
++
+(CGPA × 2)
++
+(Projects × 4)
++
+(Certifications × 3)
++
+(Hackathons × 5)
+
+Example:
+
+Coding=90
+
+AI Score=
+90×30/100
++
+85×20/100
++
+80×20/100
++
+(9×2)
++
+(4×4)
++
+(5×3)
++
+(2×5)
+
+⸻
+
+Rule 3:
+Predict Placement Category.
+
+AI Score ≥ 150
+SUPER DREAM
+
+AI Score ≥ 130
+DREAM
+
+AI Score ≥ 100
+SERVICE
+
+AI Score < 100
+MASS
+
+⸻
+
+Rule 4:
+Assign Company.
+
+SUPER DREAM
+→ Google / Microsoft
+
+DREAM
+→ Amazon / Adobe
+
+SERVICE
+→ Accenture / IBM
+
+MASS
+→ TCS / Infosys / Wipro
+
+⸻
+
+Rule 5:
+Generate Final Status.
+
+SUPER DREAM
+→ Highly Selected
+
+DREAM
+→ Selected
+
+SERVICE
+→ Eligible
+
+MASS
+→ Need Improvement
+
+⸻
+
+Rule 6:
+Store final output into:
+
+placement_result
+
+Fields:
+
+Student ID
+Student Name
+Email
+AI Score
+Category
+Company
+Final Status
+
+⸻
+
+Rule 7:
+Display Final Report in Java
+
+OUTPUT FORMAT
+
+=========================================================
+PLACEMENT PREDICTION REPORT
+
+ID NAME SCORE CATEGORY COMPANY STATUS
+
+101 Arjun 154 SUPER DREAM Google Highly Selected
+
+102 Rahul 118 SERVICE Accenture Eligible
+
+103 Sneha 170 SUPER DREAM Microsoft Highly Selected
+
+104 Varun 89 MASS TCS Need Improvement
+
+.
+
+.
+
+.
+
+=========================================================
+
+TOTAL STUDENTS : 10
+SUPER DREAM : X
+DREAM : X
+SERVICE : X
+MASS : X
+
+HIGHEST AI SCORE : ___
+LOWEST AI SCORE : ___
+
+=========================================================
+
+CONDITIONS
+
+Use Arrays
+Use JDBC
+Use ResultSet
+Use PreparedStatement
+
+DO NOT USE:
+
+ArrayList
+Collections
+Streams
+Batch Processing
+Stored Procedures
+
+Expected Deliverables:
+
+1. SQL File
+2. Java Program
+3. Output Screenshot
+4. Database Screenshot
+5. Final Report
+ 
+==================================================
+ADVANCED MINI PROJECT – 2
+AI CAMPUS PLACEMENT ELIMINATION SYSTEM
+(Java + JDBC + MySQL + Arrays)
+
+QUESTION 2 :-----------------------------------------------------------------------------------------------------------------
+
+Develop a Campus Placement Elimination System.
+
+The system should process complete student data and eliminate students round-by-round until final selections are generated.
+
+Students should not be directly selected.
+
+Selection must happen through multiple elimination rounds.
+
+⸻
+
+DATABASE CREATION
+
+CREATE DATABASE PlacementEliminationSystem;
+
+USE PlacementEliminationSystem;
+
+⸻
+
+TABLE 1 : students
+
+CREATE TABLE students(
+id INT PRIMARY KEY,
+name VARCHAR(50),
+email VARCHAR(100),
+coding INT,
+aptitude INT,
+communication INT,
+cgpa DOUBLE,
+projects INT,
+certifications INT,
+hackathons INT
+);
+
+INSERT INTO students VALUES
+
+(101,‘Arjun’,‘arjun@gmail.com’,95,85,80,9.1,4,5,2),
+(102,‘Rahul’,‘rahul@gmail.com’,80,75,70,8.0,3,2,1),
+(103,‘Sneha’,‘sneha@gmail.com’,98,90,95,9.7,5,6,4),
+(104,‘Varun’,‘varun@gmail.com’,60,70,65,7.0,2,1,0),
+(105,‘Kiran’,‘kiran@gmail.com’,88,84,80,8.5,3,4,2),
+(106,‘Ayesha’,‘ayesha@gmail.com’,72,76,78,7.6,2,2,1),
+(107,‘Rohit’,‘rohit@gmail.com’,99,95,90,9.9,5,6,5),
+(108,‘Deepika’,‘deepika@gmail.com’,55,60,62,6.8,1,1,0),
+(109,‘Ajay’,‘ajay@gmail.com’,86,82,88,8.2,3,3,2),
+(110,‘Pooja’,‘pooja@gmail.com’,78,80,76,7.8,2,3,1);
+
+⸻
+
+TABLE 2 : companies
+
+CREATE TABLE companies(
+company_id INT PRIMARY KEY,
+company_name VARCHAR(50),
+technical_cutoff INT,
+communication_cutoff INT,
+project_cutoff INT,
+max_hiring INT
+);
+
+INSERT INTO companies VALUES
+
+(1,‘Google’,90,80,4,2),
+(2,‘Amazon’,85,75,3,2),
+(3,‘Microsoft’,88,78,4,1),
+(4,‘Adobe’,80,75,3,2),
+(5,‘Accenture’,70,65,2,3),
+(6,‘IBM’,68,60,2,2),
+(7,‘Capgemini’,65,60,1,3),
+(8,‘Infosys’,60,55,1,4),
+(9,‘TCS’,55,50,0,5),
+(10,‘Wipro’,50,50,0,5);
+
+⸻
+
+TABLE 3 : interview_result
+
+CREATE TABLE interview_result(
+student_id INT,
+student_name VARCHAR(50),
+round1_score INT,
+round2_score INT,
+round3_score INT,
+final_score INT,
+allocated_company VARCHAR(50),
+final_status VARCHAR(50)
+);
+
+⸻
+
+RULES
+
+Rule 1:
+Fetch all students.
+
+⸻
+
+Rule 2:
+Generate ROUND–1 SCORE
+
+Round1 =
+Coding×50%
++
+Projects×20
++
+Hackathons×10
+
+If Round1 < 70
+
+ELIMINATE
+
+⸻
+
+Rule 3:
+Generate ROUND–2 SCORE
+
+Round2 =
+Communication×60%
++
+Aptitude×40%
+
+If Round2 < 75
+
+ELIMINATE
+
+⸻
+
+Rule 4:
+Generate ROUND–3 SCORE
+
+Round3 =
+(Coding
++
+Aptitude
++
+Communication)
+/3
+
+If Round3 < 80
+
+ELIMINATE
+
+⸻
+
+Rule 5:
+Generate FINAL SCORE
+
+Final Score=
+
+(Round1×0.5)
+
+(Round2×0.3)
+
+(Round3×0.2)
+
+⸻
+
+Rule 6:
+Company Allocation Logic
+
+Check companies one by one.
+
+Student should satisfy:
+
+Final Score
+
+Technical Cutoff
+
+Communication Cutoff
+
+Project Count
+
+Hiring Limit
+
+Once selected:
+
+Reduce company hiring count.
+
+Student cannot attend remaining companies.
+
+⸻
+
+Rule 7:
+Store final result.
+
+Fields:
+
+Student ID
+
+Student Name
+
+Round1
+
+Round2
+
+Round3
+
+Final Score
+
+Allocated Company
+
+Final Status
+
+⸻
+
+Rule 8:
+Generate FINAL ANALYTICS REPORT
+
+Display:
+
+Total Students
+
+Round1 Eliminated
+
+Round2 Eliminated
+
+Round3 Eliminated
+
+Selected
+
+Rejected
+
+Highest Final Score
+
+Lowest Final Score
+
+Company Wise Count
+
+⸻
+
+OUTPUT FORMAT
+
+=================================================
+
+PLACEMENT ELIMINATION REPORT
+
+=================================================
+
+ID NAME R1 R2 R3 FINAL COMPANY STATUS
+
+101 Arjun 92 88 90 90 Google SELECTED
+
+102 Rahul 72 80 75 75 Accenture SELECTED
+
+103 Sneha 95 94 96 95 Microsoft SELECTED
+
+104 Varun ELIMINATED ROUND–1
+
+105 Kiran ELIMINATED ROUND–2
+
+.
+
+.
+
+.
+
+=================================================
+
+ROUND–1 ELIMINATED : X
+
+ROUND–2 ELIMINATED : X
+
+ROUND–3 ELIMINATED : X
+
+TOTAL SELECTED : X
+
+TOTAL REJECTED : X
+
+=================================================
+
+CONDITIONS
+
+Use Arrays
+
+Use JDBC
+
+Use PreparedStatement
+
+Use ResultSet
+
+DO NOT USE
+
+Collections
+
+Streams
+
+ArrayList
+
+ORDER BY
+
+LIMIT
+
+Stored Procedures
+
+Expected Deliverables:
+
+1. SQL File
+2. Java Source Code
+3. Output Screenshot
+4. Database Screenshot
+5. Final Report
+
+==================================================

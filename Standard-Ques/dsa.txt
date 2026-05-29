@@ -1,0 +1,245 @@
+
+114. Maximum product subarray
+115. Product of array except self
+116. Trapping rain water
+117. Container with most water
+118. Next permutation
+119. Merge intervals
+120. Insert interval
+121. Set matrix zeroes
+122. Sort colors (Dutch National Flag)
+123. Find duplicate number
+124. Subarray sum equals K
+125. Longest consecutive sequence
+126. Maximum product of two numbers
+127. Rearrange array alternatively
+128. Merge sorted arrays
+129. Find equilibrium index
+130. Maximum difference problem
+
+### Strings
+
+131. Implement strstr()
+132. Roman to integer
+133. Integer to Roman
+134. Valid palindrome
+135. Longest palindromic substring
+136. Longest repeating character replacement
+137. Group anagrams
+138. Minimum insertions for palindrome
+139. Zigzag conversion
+140. Decode string
+141. Compare version numbers
+142. Multiply strings
+143. Count and say
+144. Word break problem
+145. Rabin-Karp pattern matching
+
+### Two Pointers
+
+146. Remove duplicates from sorted array
+147. Move zeroes
+148. Valid palindrome II
+149. Three sum
+150. Four sum
+151. Sort array by parity
+152. Merge sorted arrays
+153. Remove element
+154. Squares of sorted array
+155. Partition labels
+
+### Sliding Window
+
+156. Maximum sum subarray of size K
+157. Longest substring without repeating characters
+158. Longest repeating character replacement
+159. Minimum size subarray sum
+160. Permutation in string
+161. Find all anagrams in string
+162. Sliding window maximum
+163. Fruit into baskets
+164. Binary subarrays with sum
+165. Minimum window substring
+
+### Binary Search
+
+166. Search in rotated sorted array
+167. First and last occurrence
+168. Peak element
+169. Square root using binary search
+170. Koko eating bananas
+171. Capacity to ship packages
+172. Median of two sorted arrays
+173. Find minimum in rotated array
+174. Aggressive cows
+175. Book allocation problem
+
+### Hashing / Maps
+
+176. Two sum using hashmap
+177. Longest consecutive sequence
+178. Subarray with zero sum
+179. Count frequency of elements
+180. Top K frequent elements
+181. Happy number
+182. Isomorphic strings
+183. Longest subarray with sum K
+184. Find duplicate in array
+185. Majority element II
+
+### Stack
+
+186. Valid parentheses
+187. Min stack
+188. Next greater element
+189. Previous smaller element
+190. Largest rectangle in histogram
+191. Daily temperatures
+192. Stock span problem
+193. Evaluate postfix expression
+194. Infix to postfix conversion
+195. Remove K digits
+
+### Queue / Deque
+
+196. Implement queue using stacks
+197. Implement stack using queue
+198. Circular queue
+199. Sliding window maximum
+200. Rotten oranges
+201. First negative integer in window
+202. Generate binary numbers
+203. LRU cache
+204. Number of recent calls
+205. Task scheduler
+
+### Linked List
+
+206. Reverse linked list
+207. Reverse linked list II
+208. Detect cycle
+209. Find starting node of cycle
+210. Merge two sorted linked lists
+211. Merge K sorted lists
+212. Remove Nth node from end
+213. Add two numbers
+214. Intersection of linked list
+215. Palindrome linked list
+216. Copy list with random pointer
+
+### Recursion + Backtracking
+
+217. Subsets
+218. Subsets II
+219. Permutations
+220. Combination sum
+221. Combination sum II
+222. N-Queens
+223. Sudoku solver
+224. Generate parentheses
+225. Word search
+226. Letter combinations of phone number
+
+### Trees (Very Important)
+
+227. Tree traversal (Pre/In/Post order)
+228. Level order traversal
+229. Height of binary tree
+230. Diameter of binary tree
+231. Balanced binary tree
+232. Same tree
+233. Symmetric tree
+234. Lowest common ancestor
+235. Maximum depth of tree
+236. Path sum
+237. Zigzag traversal
+238. Boundary traversal
+239. Top view of tree
+240. Vertical order traversal
+241. Serialize and deserialize tree
+
+### Binary Search Tree (BST)
+
+242. Search in BST
+243. Insert in BST
+244. Delete node in BST
+245. Validate BST
+246. Kth smallest element
+247. Lowest common ancestor in BST
+248. Convert sorted array to BST
+249. Recover BST
+250. BST iterator
+
+### Heap / Priority Queue
+
+251. Kth largest element
+252. Top K frequent elements
+253. Merge K sorted arrays
+254. Median from data stream
+255. Task scheduler
+256. Connect ropes minimum cost
+257. Sort nearly sorted array
+258. K closest points to origin
+
+### Graphs (Very Frequently Asked)
+
+259. BFS traversal
+260. DFS traversal
+261. Number of islands
+262. Flood fill
+263. Detect cycle in graph
+264. Topological sort
+265. Course schedule
+266. Bipartite graph check
+267. Dijkstra algorithm
+268. Bellman-Ford algorithm
+269. Floyd Warshall algorithm
+270. Minimum spanning tree (Kruskal)
+271. Prim’s algorithm
+272. Shortest path in DAG
+273. Rotten oranges
+274. Word ladder
+
+### Dynamic Programming (Most Important for Interviews)
+
+275. Climbing stairs
+276. House robber
+277. House robber II
+278. Coin change
+279. Longest increasing subsequence
+280. Longest common subsequence
+281. 0/1 Knapsack
+282. Partition equal subset sum
+283. Edit distance
+284. Decode ways
+285. Unique paths
+286. Minimum path sum
+287. Frog jump
+288. Matrix chain multiplication
+289. Palindrome partitioning
+
+### Greedy
+
+290. Activity selection problem
+291. Job sequencing problem
+292. Fractional knapsack
+293. Jump game
+294. Jump game II
+295. Gas station problem
+296. Candy distribution
+297. Merge intervals
+298. Non-overlapping intervals
+299. Minimum platforms problem
+
+### Bit Manipulation
+
+300. Check odd/even using bit
+301. Power of two
+302. Count set bits
+303. Single number
+304. Missing number using XOR
+305. Reverse bits
+306. XOR of range
+307. Subsets using bitmasking
+308. Divide without operators
+
