@@ -90,6 +90,7 @@ public class stack {
         stack.printStack();
 
         stack.pop();
+        stack.pop();
 
         System.out.println("Stack after pop:");
         stack.printStack();
