@@ -1,171 +1,169 @@
-## 1. Basic Programs / Conditions
+## 1. Basic Logic & Number Problems
 
-1. Even or odd number
-2. Positive, negative, or zero
-3. Largest among 2 numbers
-4. Largest among 3 numbers
-5. Leap year check
-6. Grade calculator
-7. Calculator using switch case
-8. Check if character is vowel/consonant
-9. Check uppercase/lowercase
-
----
-
-## 2. Loops & Number Logic
-
-10. Print 1 to N
-11. Print N to 1
-12. Sum of first N natural numbers
-13. Multiplication table
-14. Factorial of a number
-15. Power of a number
-16. Count digits in a number
-17. Reverse a number
-18. Palindrome number
-19. Armstrong number
-20. Prime number check
-21. Print all primes in range
-22. GCD / HCF of two numbers
-23. LCM of two numbers
-24. Fibonacci series
+1. Even or Odd
+2. Prime Number Check
+3. Armstrong Number
+4. Palindrome Number
+5. Reverse Number
+6. Count Digits
+7. GCD / HCF
+8. LCM
+9. Fibonacci Series
+10. Factorial
 
 ---
 
-## 3. Pattern Problems
+## 2. Arrays
 
-25. Square star pattern
-26. Right triangle pattern
-27. Inverted triangle pattern
-28. Pyramid pattern
-29. Diamond pattern
-30. Hollow square
-31. Hollow pyramid
-32. Floyd’s triangle
-33. Pascal triangle
-34. Number pyramid
-35. Character pyramid
-
----
-
-## 4. Arrays (Basic → Intermediate)
-
-36. Find largest element in array
-37. Find smallest element in array
-38. Sum of array elements
-39. Average of array
-40. Count even and odd elements in array
-41. Find second largest element
-42. Find maximum and minimum together
-43. Check if array is sorted
-44. Reverse an array
-45. Copy one array to another
-46. Merge two arrays
-47. Find duplicate elements in array
-48. Remove duplicates from array
-49. Frequency of elements in array
-50. Missing number in array
-51. Rotate array left/right
-52. Move zeros to end
-53. Union of two arrays
-54. Intersection of arrays
-55. Maximum subarray sum (Kadane’s Algorithm)
-56. Leaders in array
-57. Rearrange positive and negative numbers
-58. Two sum problem
-59. Majority element
-60. Best time to buy and sell stock
+11. Largest Element in Array
+12. Smallest Element in Array
+13. Second Largest Element
+14. Sum of Array Elements
+15. Check if Array is Sorted
+16. Reverse an Array
+17. Count Even and Odd Elements
+18. Find Maximum and Minimum Together
+19. Find Duplicate Elements
+20. Remove Duplicates from Array
+21. Frequency of Elements
+22. Missing Number in Array
+23. Rotate Array Left / Right
+24. Move Zeroes to End
+25. Union of Two Arrays
+26. Intersection of Arrays
+27. Leaders in Array
+28. Rearrange Positive and Negative Numbers
+29. Majority Element
+30. Two Sum
+31. Best Time to Buy and Sell Stock
+32. Maximum Subarray Sum (Kadane's Algorithm)
 
 ---
 
-## 5. Strings
+## 3. Strings
 
-61. String reversal
-62. Palindrome string
-63. Count vowels and consonants
-64. Count words in sentence
-65. Character frequency in string
-66. Remove spaces from string
-67. Convert uppercase to lowercase and vice versa
-68. Find duplicate characters in string
-69. Check anagram strings
-70. Find longest word in sentence
-71. String compression
-72. Remove duplicates from string
-73. First non-repeating character
-74. Longest common prefix
-75. Valid parentheses
-76. Reverse words in sentence
-77. String rotation check
-78. Longest substring without repeating characters
+33. Reverse String
+34. Palindrome String
+35. Count Vowels and Consonants
+36. Character Frequency in String
+37. Remove Spaces from String
+38. Longest Word in Sentence
+39. Check Anagram Strings
+40. Find Duplicate Characters
+41. String Compression
+42. Remove Duplicates from String
+43. First Non-Repeating Character
+44. Longest Common Prefix
+45. Reverse Words in Sentence
+46. String Rotation Check
+47. Valid Parentheses
+48. Longest Substring Without Repeating Characters
 
 ---
 
-## 6. Recursion & Backtracking Basics
+## 4. Hashing / HashMap
 
-79. Factorial using recursion
-80. Fibonacci using recursion
-81. Sum of digits using recursion
-82. Reverse string using recursion
-83. Binary search using recursion
+49. Frequency Count Using HashMap
+50. Count Distinct Elements
+51. First Repeating Element
+52. Pair with Given Sum
+53. Longest Consecutive Sequence
+
+---
+
+## 5. Two Pointers
+
+54. Remove Duplicates from Sorted Array
+55. Pair Sum in Sorted Array
+56. Container With Most Water
+
+---
+
+## 6. Sliding Window
+
+57. Maximum Sum Subarray of Size K
+58. Maximum Consecutive Ones
+59. Longest Substring Without Repeating Characters
+60. Minimum Window Substring
+
+---
+
+## 7. Searching
+
+61. Linear Search
+62. Binary Search
+63. First Occurrence of Element
+64. Last Occurrence of Element
+65. Lower Bound
+66. Upper Bound
+67. Search in Rotated Sorted Array
+68. Peak Element
+
+---
+
+## 8. Sorting
+
+69. Bubble Sort
+70. Selection Sort
+71. Insertion Sort
+72. Merge Sort
+73. Quick Sort
+
+---
+
+## 9. Matrix Problems
+
+74. Matrix Transpose
+75. Matrix Multiplication
+76. Spiral Matrix Traversal
+77. Rotate Matrix by 90 Degrees
+78. Row with Maximum 1s
+
+---
+
+## 10. Recursion & Backtracking
+
+79. Factorial Using Recursion
+80. Fibonacci Using Recursion
+81. Sum of Digits Using Recursion
+82. Reverse String Using Recursion
+83. Binary Search Using Recursion
 84. Tower of Hanoi
-85. Generate subsets
-86. String permutations
+85. Generate Subsets
+86. String Permutations
 
 ---
 
-## 7. Searching Algorithms
+## 11. Linked List
 
-87. Linear search
-88. Binary search
-89. Lower bound and upper bound
-
----
-
-## 8. Sorting Algorithms
-
-90. Bubble sort
-91. Selection sort
-92. Insertion sort
-93. Merge sort
-94. Quick sort
-95. Count sort
+87. Reverse Linked List
+88. Find Middle Node
+89. Detect Cycle in Linked List
+90. Merge Two Sorted Linked Lists
 
 ---
 
-## 9. Hashing / HashMap
+## 12. Stack
 
-96. Frequency count using hashmap
-97. First repeating element
-98. Pair with given sum
-99. Count distinct elements
-100. Longest consecutive sequence
-
----
-
-## 10. Sliding Window Problems
-
-101. Maximum sum subarray of size K
-102. Longest substring without repeating characters
-103. Maximum consecutive ones
-104. Minimum window substring
+91. Implement Stack Using Array
+92. Valid Parentheses
+93. Next Greater Element
+94. Min Stack
 
 ---
 
-## 11. Matrix Problems
+## 13. Queue
 
-105. Matrix transpose
-106. Matrix multiplication
-107. Spiral matrix traversal
-108. Rotate matrix by 90 degrees
-109. Row with maximum 1s
+95. Queue Using Array
+96. Circular Queue
 
 ---
 
-## 12. Linked List Basics
+## 14. Binary Trees
 
-110. Reverse linked list
-111. Detect cycle in linked list
-112. Find middle node in linked list
-113. Merge two linked lists
-
+97. Inorder Traversal
+98. Preorder Traversal
+99. Postorder Traversal
+100. Level Order Traversal
+101. Height of Binary Tree
+102. Count Nodes in Binary Tree
