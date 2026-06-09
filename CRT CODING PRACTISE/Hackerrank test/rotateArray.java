@@ -6,7 +6,11 @@ import java.util.*;
 
 public class rotateArray{
     public static void main(String args[]){
-        Scanner 
+        int [] arr ={1,2,3,4,5,6};
+        int k =2;
+        int[] rotated = rotateRight(arr,k);
+        System.out.println(Arrays.toString(rotated));
+            
 
 
     }
@@ -16,9 +20,9 @@ public class rotateArray{
         int[] result = new int[n];
 
         for(int i=0;i<n;i++){
-            result[(i+k)%n]==arr[i]
+            result[(i+k)%n]==arr[i];
         }
         return result;
     }
-    
 }
+    

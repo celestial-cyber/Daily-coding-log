@@ -1,0 +1,168 @@
+You are building a smart toll booth system that calculates toll charges for vehicles based on multiple real-world rules.
+
+Each vehicle is charged depending on:
+
+-Vehicle type -VIP pass -Emergency vehicles -Peak hour pricing -Vehicle number rules
+
+Your task is to compute the bill for each vehicle and print a final summary.
+
+Billing Rules:
+Vehicle Type Charges:
+Type Vehicle Charge 1 Bike ₹20 2 Car ₹50 3 Truck ₹100 4 Emergency ₹0
+
+Emergency Rule (Highest Priority)
+If type = 4 Toll = 0 Skip all other rules
+
+VIP Rule:
+If vip = 1 Toll = 0 Skip all other rules
+
+Peak Hour Rule:
+If hour is between 17 and 20 (inclusive) Add 20% extra
+
+Number Rule:
+Even number → ₹10 discount Odd number → ₹5 extra
+
+Priority Order:
+Emergency → VIP → Base Price → Peak → Even/Odd
+
+Input Format
+
+n type[0] type[1] ... type[n-1] number[0] number[1] ... number[n-1] vip[0] vip[1] ... vip[n-1] hour
+
+Constraints
+
+1 ≤ n ≤ 100000 1 ≤ vehicle number ≤ 1000000 0 ≤ hour ≤ 23
+
+Output Format
+
+Vehicle Bill: Vehicle (VIP) Bill: 0 Vehicle (Emergency) Bill: 0 Total Collection: Bikes: Cars: Trucks:
+
+Sample Input 0
+
+4
+1 2 3 1
+101 102 103 104
+0 0 0 0
+10
+Sample Output 0
+
+Vehicle 101 Bill: 25
+Vehicle 102 Bill: 40
+Vehicle 103 Bill: 105
+Vehicle 104 Bill: 10
+Total Collection: 180
+Bikes: 2
+Cars: 1
+Trucks: 1
+Sample Input 1
+
+6
+4 2 1 3 2 4
+999 200 101 300 400 888
+0 1 0 0 1 0
+17
+Sample Output 1
+
+Vehicle 999 (Emergency) Bill: 0
+Vehicle 200 (VIP) Bill: 0
+Vehicle 101 Bill: 29
+Vehicle 300 Bill: 110
+Vehicle 400 (VIP) Bill: 0
+Vehicle 888 (Emergency) Bill: 0
+Total Collection: 139
+Bikes: 1
+Cars: 0
+Trucks: 1
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        int[] type = new int[n];
+        int[] number = new int[n];
+        int[] vip = new int[n];
+
+        for(int i = 0; i < n; i++)
+            type[i] = sc.nextInt();
+
+        for(int i = 0; i < n; i++)
+            number[i] = sc.nextInt();
+
+        for(int i = 0; i < n; i++)
+            vip[i] = sc.nextInt();
+
+        int hour = sc.nextInt();
+
+        long total = 0;
+
+        int bikes = 0;
+        int cars = 0;
+        int trucks = 0;
+
+        for(int i = 0; i < n; i++) {
+
+            // Emergency Rule (Highest Priority)
+            if(type[i] == 4) {
+                System.out.println(
+                    "Vehicle " + number[i] +
+                    " (Emergency) Bill: 0"
+                );
+                continue;
+            }
+
+            // VIP Rule
+            if(vip[i] == 1) {
+                System.out.println(
+                    "Vehicle " + number[i] +
+                    " (VIP) Bill: 0"
+                );
+                continue;
+            }
+
+            int bill = 0;
+
+            // Base Price
+            if(type[i] == 1) {
+                bill = 20;
+                bikes++;
+            }
+            else if(type[i] == 2) {
+                bill = 50;
+                cars++;
+            }
+            else if(type[i] == 3) {
+                bill = 100;
+                trucks++;
+            }
+
+            // Peak Hour
+            if(hour >= 17 && hour <= 20) {
+                bill += bill * 20 / 100;
+            }
+
+            // Number Rule
+            if(number[i] % 2 == 0)
+                bill -= 10;
+            else
+                bill += 5;
+
+            total += bill;
+
+            System.out.println(
+                "Vehicle " + number[i] +
+                " Bill: " + bill
+            );
+        }
+
+        System.out.println("Total Collection: " + total);
+        System.out.println("Bikes: " + bikes);
+        System.out.println("Cars: " + cars);
+        System.out.println("Trucks: " + trucks);
+    }
+}

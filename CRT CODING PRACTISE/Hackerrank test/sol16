@@ -1,0 +1,134 @@
+This is a **Frequency Counting + Order Preservation** problem.
+
+### Key Observation
+
+The output must follow the **order of first occurrence**.
+
+Example:
+
+```text
+1 2 8 3 2 2 2 5 1
+```
+
+Frequencies:
+
+```text
+1 -> 2
+2 -> 4
+8 -> 1
+3 -> 1
+5 -> 1
+```
+
+Notice that:
+
+```text
+1 came first
+then 2
+then 8
+then 3
+then 5
+```
+
+So we cannot use a normal `HashMap` alone because its order is not guaranteed.
+
+---
+
+## Best Approach: LinkedHashMap
+
+### Concept
+
+```java
+LinkedHashMap
+```
+
+* Stores key-value pairs
+* Maintains insertion order
+* Perfect for frequency counting with first-occurrence order
+
+---
+
+## Java Solution
+
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+
+        /*
+         Concept:
+         LinkedHashMap preserves insertion order.
+
+         key   -> array element
+         value -> frequency
+        */
+
+        LinkedHashMap<Integer, Integer> map = new LinkedHashMap<>();
+
+        for(int i = 0; i < n; i++) {
+            int num = sc.nextInt();
+
+            map.put(num, map.getOrDefault(num, 0) + 1);
+        }
+
+        for(Map.Entry<Integer, Integer> entry : map.entrySet()) {
+            System.out.println(
+                entry.getKey() +
+                " repeated " +
+                entry.getValue() +
+                " times"
+            );
+        }
+    }
+}
+```
+
+---
+
+## Alternative (Without Collections)
+
+You could use:
+
+```text
+Nested Loops
++ Visited Array
+```
+
+But that would be:
+
+```text
+O(n²)
+```
+
+and may fail for:
+
+```text
+n = 100000
+```
+
+---
+
+## Complexity
+
+Using `LinkedHashMap`:
+
+```text
+Time  : O(n)
+Space : O(n)
+```
+
+### Concepts Involved
+
+```text
+✓ Frequency Counting
+✓ HashMap
+✓ LinkedHashMap (maintains insertion order)
+✓ getOrDefault()
+✓ Map Traversal
+```
+
+This is one of the most common interview patterns: **"count frequency while preserving first occurrence order" → use `LinkedHashMap`**.

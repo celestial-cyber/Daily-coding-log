@@ -1,0 +1,149 @@
+This is an **Array + Block Processing** problem.
+
+### Understand the Question
+
+Input:
+
+```text
+1 2 3 4 5 6 7 8
+K = 3
+```
+
+Divide into blocks of size 3:
+
+```text
+[1 2 3] [4 5 6] [7 8]
+```
+
+Now rotate **each block** to the right by 1.
+
+### Block 1
+
+```text
+[1 2 3]
+```
+
+Right rotate by 1:
+
+```text
+[3 1 2]
+```
+
+### Block 2
+
+```text
+[4 5 6]
+```
+
+Right rotate by 1:
+
+```text
+[6 4 5]
+```
+
+### Block 3 (last block)
+
+```text
+[7 8]
+```
+
+Even though its size is less than K, rotate it too:
+
+```text
+[8 7]
+```
+
+Final:
+
+```text
+3 1 2 6 4 5 8 7
+```
+
+---
+
+## Concept
+
+For every block:
+
+```java
+start = block beginning
+end   = min(start + K - 1, n - 1)
+```
+
+Store the last element.
+
+Shift all elements one step right.
+
+Put the stored last element at the beginning.
+
+---
+
+## Simple Java Solution
+
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for(int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int k = sc.nextInt();
+
+        /*
+         Concept: Block Processing
+
+         1. Divide array into blocks of size K.
+         2. For each block:
+            - Save last element
+            - Shift remaining elements right by one
+            - Put saved element at block start
+         3. Process last incomplete block as well.
+        */
+
+        for(int start = 0; start < n; start += k) {
+
+            int end = Math.min(start + k - 1, n - 1);
+
+            // Block of size 1 remains unchanged
+            if(start == end)
+                continue;
+
+            int last = arr[end];
+
+            for(int i = end; i > start; i--) {
+                arr[i] = arr[i - 1];
+            }
+
+            arr[start] = last;
+        }
+
+        for(int x : arr) {
+            System.out.print(x + " ");
+        }
+    }
+}
+```
+
+### Time Complexity
+
+```text
+O(n)
+```
+
+Each element is shifted at most once within its block.
+
+### Concepts Involved
+
+```text
+✓ Array Traversal
+✓ Block/Chunk Processing
+✓ Right Rotation
+✓ In-place Array Manipulation
+```

@@ -1,0 +1,175 @@
+Step 1: Convert the condition
+
+We need:
+
+#vowels = #consonants
+
+For each character:
+
+vowel      -> +1
+consonant  -> -1
+
+Now a substring is valid when:
+
+sum of that substring = 0
+
+because:
+
+(+1 vowels) + (-1 consonants) = 0
+
+means equal vowels and consonants.
+
+Example
+abec
+
+Convert:
+
+a -> +1
+b -> -1
+e -> +1
+c -> -1
+
+Array:
+
+[1, -1, 1, -1]
+Step 2: Use Prefix Sum
+
+Prefix sums:
+
+Index   Value   Prefix
+-1              0
+0       1       1
+1      -1       0
+2       1       1
+3      -1       0
+
+Notice:
+
+0 appears 3 times
+1 appears 2 times
+
+Whenever the same prefix sum appears again:
+
+prefix[j] = prefix[i]
+
+then:
+
+sum(i+1 ... j) = 0
+
+which means the substring has equal vowels and consonants.
+
+Step 3: Count using HashMap
+
+For every prefix sum:
+
+answer += frequency_of_this_prefix_seen_before
+
+Then increase its frequency.
+
+Dry Run
+
+String:
+
+abec
+
+Prefixes:
+
+0
+1
+0
+1
+0
+
+Process:
+
+prefix=0 -> freq=1
+
+prefix=1 -> answer+=0
+            freq(1)=1
+
+prefix=0 -> answer+=1
+            freq(0)=2
+
+prefix=1 -> answer+=1
+            freq(1)=2
+
+prefix=0 -> answer+=2
+            freq(0)=3
+
+Answer:
+
+1+1+2 = 4
+
+Matches sample.
+
+Java Solution
+import java.util.*;
+
+public class Main {
+
+    static boolean isVowel(char ch) {
+        return ch=='a' || ch=='e' || ch=='i'
+            || ch=='o' || ch=='u';
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.next();
+
+        /*
+         Prefix Sum + HashMap
+
+         vowel      -> +1
+         consonant  -> -1
+
+         Equal vowels and consonants
+         => substring sum = 0
+
+         Count subarrays with sum 0
+         using prefix frequencies.
+        */
+
+        HashMap<Integer, Long> map = new HashMap<>();
+
+        int prefix = 0;
+        long ans = 0;
+
+        map.put(0, 1L);
+
+        for(char ch : s.toCharArray()) {
+
+            if(isVowel(ch))
+                prefix += 1;
+            else
+                prefix -= 1;
+
+            ans += map.getOrDefault(prefix, 0L);
+
+            map.put(prefix,
+                    map.getOrDefault(prefix, 0L) + 1);
+        }
+
+        System.out.println(ans);
+    }
+}
+Complexity
+Time: O(n)
+Space: O(n)
+Concept Used
+1. Convert condition into numbers
+   vowel = +1
+   consonant = -1
+
+2. Equal vowels and consonants
+   => substring sum = 0
+
+3. Count zero-sum subarrays
+   using Prefix Sum + HashMap
+
+This is the same pattern as:
+
+Count subarrays with sum 0
+Equal 0s and 1s
+Equal positive and negative elements
+Equal vowels and consonants

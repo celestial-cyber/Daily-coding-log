@@ -1,0 +1,287 @@
+This is a **Rotated Sorted Array** problem.
+
+---
+
+## Key Observation
+
+A sorted array:
+
+```text
+1 2 3 4 5
+```
+
+after rotation becomes:
+
+```text
+3 4 5 1 2
+```
+
+Notice there is exactly **one place where order breaks**:
+
+```text
+5 > 1
+```
+
+We call this a **break point**.
+
+---
+
+## Example 1
+
+```text
+3 4 5 1 2
+```
+
+Check adjacent pairs:
+
+```text
+3 < 4 ✓
+4 < 5 ✓
+5 > 1 ✗  (break point)
+1 < 2 ✓
+```
+
+Only one break point.
+
+Therefore this is a rotated sorted array.
+
+---
+
+## Example 2
+
+```text
+3 1 4 2
+```
+
+Check:
+
+```text
+3 > 1 ✗
+1 < 4 ✓
+4 > 2 ✗
+```
+
+Two break points.
+
+Impossible to obtain a sorted array using only rotations.
+
+Answer:
+
+```text
+-1
+```
+
+---
+
+## How many rotations?
+
+Suppose:
+
+```text
+3 4 5 1 2
+```
+
+Break point index:
+
+```text
+i = 2
+```
+
+because:
+
+```text
+arr[2] = 5
+arr[3] = 1
+```
+
+To sort:
+
+### Left Rotations
+
+Bring `1` to the front.
+
+```text
+n - (i + 1)
+= 5 - 3
+= 2
+```
+
+Left rotate 2 times:
+
+```text
+3 4 5 1 2
+↓
+4 5 1 2 3
+↓
+5 1 2 3 4
+```
+
+Oops—that's not sorted. Better think in terms of rotation distance.
+
+The smallest element is at index:
+
+```text
+pivot = i + 1 = 3
+```
+
+Left rotations needed:
+
+```text
+pivot = 3
+```
+
+Right rotations needed:
+
+```text
+n - pivot = 2
+```
+
+Choose minimum:
+
+```text
+min(3, 2) = 2
+```
+
+Matches sample.
+
+---
+
+## Algorithm
+
+### Step 1
+
+Count break points:
+
+```java
+if(arr[i] > arr[i+1])
+    breaks++;
+```
+
+### Step 2
+
+If breaks > 1:
+
+```java
+return -1;
+```
+
+### Step 3
+
+If breaks == 0:
+
+Already sorted.
+
+```java
+return 0;
+```
+
+### Step 4
+
+Find pivot:
+
+```java
+pivot = i + 1
+```
+
+### Step 5
+
+Answer:
+
+```java
+Math.min(pivot, n - pivot)
+```
+
+---
+
+## Dry Run
+
+```text
+2 3 4 5 1
+```
+
+Break point:
+
+```text
+5 > 1
+```
+
+Pivot:
+
+```text
+4
+```
+
+Rotations:
+
+```text
+Left  = 4
+Right = 1
+```
+
+Answer:
+
+```text
+1
+```
+
+---
+
+## Java Code
+
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for(int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        /*
+         Concept:
+         Rotated Sorted Array
+
+         Sorted rotated array has
+         at most one break point:
+         arr[i] > arr[i+1]
+        */
+
+        int breaks = 0;
+        int pivot = 0;
+
+        for(int i = 0; i < n - 1; i++) {
+            if(arr[i] > arr[i + 1]) {
+                breaks++;
+                pivot = i + 1;
+            }
+        }
+
+        if(breaks == 0) {
+            System.out.println(0);
+        }
+        else if(breaks > 1) {
+            System.out.println(-1);
+        }
+        else {
+            System.out.println(Math.min(pivot, n - pivot));
+        }
+    }
+}
+```
+
+### Concepts Involved
+
+```text
+✓ Rotated Sorted Array
+✓ Array Traversal
+✓ Pivot Finding
+✓ Break Point Detection
+✓ Greedy (minimum of left/right rotations)
+```
+
+The main trick is recognizing that a sortable-by-rotation array can have **at most one break point**.

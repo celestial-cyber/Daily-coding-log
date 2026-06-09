@@ -1,0 +1,197 @@
+/*This is a classic Sliding Window problem disguised as a swapping problem.
+
+Step 1: Understand the goal
+
+Input:
+
+2 1 5 6 3 4 7
+K = 3
+
+Elements ≤ K are:
+
+2 1 3
+
+There are 3 good elements.
+
+We want all these good elements together.
+
+For example:
+
+[2 1 3] 5 6 4 7
+
+or
+
+5 [2 1 3] 6 4 7
+
+etc.
+
+Step 2: Count good elements
+
+Good element:
+
+arr[i] <= K
+
+Count them:
+
+2,1,3
+
+So:
+
+good = 3
+
+This means our final group must occupy a window of size 3.
+
+Step 3: Find bad elements inside every window
+
+Bad element:
+
+arr[i] > K
+
+Consider windows of size 3.
+
+Window 1
+[2 1 5]
+
+Bad elements:
+
+5
+
+Count = 1
+
+Window 2
+[1 5 6]
+
+Bad elements:
+
+5,6
+
+Count = 2
+
+Window 3
+[5 6 3]
+
+Bad elements:
+
+5,6
+
+Count = 2
+
+Window 4
+[6 3 4]
+
+Bad elements:
+
+6,4
+
+Count = 2
+
+Window 5
+[3 4 7]
+
+Bad elements:
+
+4,7
+
+Count = 2
+
+Minimum bad count:
+
+1
+
+Answer:
+
+1
+Why does "minimum bad elements" = "minimum swaps"?
+
+Suppose window:
+
+[2 1 5]
+
+Good elements needed:
+
+2 1 3
+
+Inside window, only one bad element exists:
+
+5
+
+Outside window, one good element exists:
+
+3
+
+Swap:
+
+5 ↔ 3
+
+Now:
+
+[2 1 3]
+
+Only 1 swap required.
+
+Therefore:
+
+Minimum swaps = Minimum bad elements
+in any window of size good.
+Concept Used
+Sliding Window
+Count good elements (<= K)
+Window size = good count
+Count bad elements in first window
+Slide the window
+Update bad count efficiently
+Keep minimum bad count
+Complexity
+Time  : O(n)
+Space : O(1)*/
+
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+
+        for(int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+
+        int k = sc.nextInt();
+
+        // Count elements <= k (good elements)
+        int good = 0;
+        for(int x : arr) {
+            if(x <= k)
+                good++;
+        }
+
+        // Count bad elements (> k) in first window
+        int bad = 0;
+        for(int i = 0; i < good; i++) {
+            if(arr[i] > k)
+                bad++;
+        }
+
+        int ans = bad;
+
+        // Sliding Window
+        for(int i = good; i < n; i++) {
+
+            // Remove element leaving window
+            if(arr[i - good] > k)
+                bad--;
+
+            // Add element entering window
+            if(arr[i] > k)
+                bad++;
+
+            ans = Math.min(ans, bad);
+        }
+
+        System.out.println(ans);
+    }
+}

@@ -1,16 +1,135 @@
 ## 1. Basic Logic & Number Problems
 
-1. Even or Odd
-2. Prime Number Check
-3. Armstrong Number
-4. Palindrome Number
-5. Reverse Number
-6. Count Digits
-7. GCD / HCF
-8. LCM
-9. Fibonacci Series
-10. Factorial
-
+1Basic Number Problems
+Even or Odd
+Prime Number Check
+Armstrong Number
+Palindrome Number
+Reverse Number
+Count Digits
+GCD / HCF
+LCM
+Fibonacci Series
+Factorial
+Very Common Number Problems
+Sum of Digits
+Product of Digits
+Sum of First N Natural Numbers
+Sum of Squares of N Numbers
+Power of a Number (a^b)
+Check Perfect Number
+Check Strong Number
+Check Harshad (Niven) Number
+Check Automorphic Number
+Check Neon Number
+Check Spy Number
+Check Sunny Number
+Check Duck Number
+Check Magic Number
+Check Happy Number
+Check Disarium Number
+Check Peterson Number
+Check Krishnamurthy Number
+Check Buzz Number
+Check Emirp Number
+Prime Number Variations
+Print All Prime Numbers in Range
+Count Prime Numbers in Range
+Sum of Prime Numbers
+Find Next Prime Number
+Twin Prime Numbers
+Co-Prime Numbers
+Prime Factorization
+Largest Prime Factor
+Sieve of Eratosthenes
+Circular Prime Check
+Digit-Based Problems
+Find Largest Digit
+Find Smallest Digit
+Sum of Even Digits
+Sum of Odd Digits
+Count Even Digits
+Count Odd Digits
+Frequency of Each Digit
+Replace 0 with 1
+Remove a Specific Digit
+Check if Digits are in Ascending Order
+Check if Digits are in Descending Order
+Check if All Digits are Unique
+Count Occurrences of a Digit
+First Digit of Number
+Last Digit of Number
+Number Series Questions
+Fibonacci Series up to N Terms
+Tribonacci Series
+Lucas Series
+Geometric Progression
+Arithmetic Progression
+Pell Series
+Catalan Numbers
+Pascal Triangle
+Generate Prime Series
+Generate Armstrong Numbers in Range
+Factorial-Based Problems
+Trailing Zeros in Factorial
+Sum of Factorials of Digits
+Strong Number using Factorial
+nPr Calculation
+nCr Calculation
+Number Conversion Problems
+Decimal to Binary
+Binary to Decimal
+Decimal to Octal
+Octal to Decimal
+Decimal to Hexadecimal
+Hexadecimal to Decimal
+Binary to Octal
+Binary to Hexadecimal
+Mathematical Number Problems
+Check Perfect Square
+Check Perfect Cube
+Find Square Root Without Library
+Find Cube Root
+Check Power of 2
+Check Power of 3
+Check Power of 10
+Find Factors of a Number
+Count Factors
+Sum of Factors
+Largest Factor
+Smallest Factor
+Frequently Asked Interview/Lab Questions
+Armstrong Numbers in a Range
+Palindrome Numbers in a Range
+Strong Numbers in a Range
+Perfect Numbers in a Range
+Harshad Numbers in a Range
+Happy Numbers in a Range
+Prime Numbers in a Range
+Sum of Digits Until Single Digit (Digital Root)
+Multiplicative Digital Root
+Convert Number to Words
+Top 20 Most Asked in College Labs
+Prime Number
+Armstrong Number
+Palindrome Number
+Reverse Number
+Fibonacci Series
+Factorial
+GCD / HCF
+LCM
+Perfect Number
+Strong Number
+Harshad Number
+Automorphic Number
+Neon Number
+Happy Number
+Disarium Number
+Peterson Number
+Spy Number
+Buzz Number
+Sum of Digits
+Prime Numbers in Range
 ---
 
 ## 2. Arrays
@@ -167,3 +286,189 @@
 100. Level Order Traversal
 101. Height of Binary Tree
 102. Count Nodes in Binary Tree
+15. Advanced Arrays
+Product of Array Except Self
+Trapping Rain Water
+Maximum Product Subarray
+Longest Increasing Subsequence
+Subarray with Given Sum
+Count Inversions in Array
+Merge Intervals
+Insert Interval
+Find Duplicate Number (Floyd Cycle Detection)
+Kth Largest Element
+Kth Smallest Element
+Maximum Sum Circular Subarray
+Minimum Number of Jumps
+Chocolate Distribution Problem
+Dutch National Flag Problem (Sort 0s,1s,2s)
+Equilibrium Index
+Longest Consecutive Sequence
+Sliding Window Maximum
+16. Advanced Strings
+Longest Palindromic Substring
+Longest Palindromic Subsequence
+Minimum Insertions for Palindrome
+Implement strstr()
+Rabin-Karp Pattern Matching
+KMP Algorithm
+Z Algorithm
+Group Anagrams
+Word Break Problem
+Count and Say
+Minimum Window Substring
+String to Integer (atoi)
+Multiply Large Numbers as Strings
+Decode Ways
+Text Justification
+17. Advanced Hashing
+Subarray Sum Equals K
+Longest Subarray with Sum K
+Longest Zero Sum Subarray
+Top K Frequent Elements
+Group Anagrams Using HashMap
+Isomorphic Strings
+Find All Duplicates in Array
+Longest Consecutive Sequence (HashSet)
+Frequency Sort
+Happy Number using HashSet
+18. Advanced Sliding Window
+Longest Repeating Character Replacement
+Fruit Into Baskets
+Maximum Average Subarray
+Permutation in String
+Count Occurrences of Anagrams
+Smallest Subarray with Given Sum
+Longest Subarray of Ones After Replacement
+Sliding Window Median
+19. Binary Search Patterns
+Square Root Using Binary Search
+Search Insert Position
+Find Minimum in Rotated Sorted Array
+Median of Two Sorted Arrays
+Aggressive Cows
+Allocate Minimum Pages
+Painter's Partition Problem
+Koko Eating Bananas
+Capacity To Ship Packages
+Search in Nearly Sorted Array
+20. Linked List Advanced
+Reverse Linked List in Groups of K
+Remove Nth Node from End
+Intersection of Two Linked Lists
+Flatten Linked List
+Clone Linked List with Random Pointer
+Add Two Numbers Represented by Linked Lists
+Palindrome Linked List
+Rotate Linked List
+Segregate Even and Odd Nodes
+Sort Linked List
+21. Stack & Queue Advanced
+Largest Rectangle in Histogram
+Stock Span Problem
+Celebrity Problem
+Next Smaller Element
+Previous Greater Element
+Implement Queue Using Stacks
+Implement Stack Using Queues
+Sliding Window Maximum (Deque)
+LRU Cache
+Circular Deque
+Evaluate Postfix Expression
+22. Binary Tree Advanced
+Diameter of Binary Tree
+Balanced Binary Tree
+Left View of Binary Tree
+Right View of Binary Tree
+Top View of Binary Tree
+Bottom View of Binary Tree
+Vertical Order Traversal
+Zigzag Traversal
+Lowest Common Ancestor (LCA)
+Boundary Traversal
+Check Identical Trees
+Symmetric Tree
+Maximum Path Sum
+Convert Tree to Mirror Tree
+23. Binary Search Tree (BST)
+Search in BST
+Insert in BST
+Delete Node in BST
+Validate BST
+Kth Smallest Element in BST
+Kth Largest Element in BST
+Lowest Common Ancestor in BST
+Inorder Successor
+Inorder Predecessor
+BST to Sorted Array
+24. Heap / Priority Queue
+K Largest Elements
+Kth Largest Element in Array
+Merge K Sorted Arrays
+Merge K Sorted Linked Lists
+Top K Frequent Elements
+Connect Ropes with Minimum Cost
+Median from Data Stream
+Heap Sort
+Nearly Sorted Array
+Reorganize String
+25. Greedy Algorithms
+Activity Selection Problem
+Fractional Knapsack
+Job Sequencing Problem
+Minimum Platforms Required
+Huffman Coding
+Gas Station Problem
+Jump Game
+Assign Cookies
+Candy Distribution
+Minimum Coins Problem
+26. Dynamic Programming (Most Important)
+Climbing Stairs
+House Robber
+Coin Change
+Coin Change II
+0/1 Knapsack
+Unbounded Knapsack
+Longest Common Subsequence (LCS)
+Longest Common Substring
+Longest Increasing Subsequence
+Edit Distance
+Matrix Chain Multiplication
+Partition Equal Subset Sum
+Rod Cutting Problem
+Egg Dropping Problem
+Wildcard Matching
+Palindrome Partitioning
+Maximum Sum Increasing Subsequence
+27. Graphs (Very Frequently Asked)
+BFS Traversal
+DFS Traversal
+Detect Cycle in Undirected Graph
+Detect Cycle in Directed Graph
+Topological Sort
+Number of Islands
+Flood Fill Algorithm
+Rotten Oranges
+Shortest Path in Unweighted Graph
+Dijkstra Algorithm
+Bellman-Ford Algorithm
+Floyd-Warshall Algorithm
+Minimum Spanning Tree (Kruskal)
+Minimum Spanning Tree (Prim)
+Disjoint Set Union (DSU)
+Course Schedule
+Word Ladder
+Bipartite Graph Check
+Connected Components
+28. Bit Manipulation
+Check Odd or Even Using Bitwise
+Count Set Bits
+Power of Two
+Find Unique Element
+Find Missing Number Using XOR
+Swap Two Numbers Without Temp
+Toggle Ith Bit
+Check Ith Bit Set or Not
+Subsets Using Bit Masking
+Single Number II

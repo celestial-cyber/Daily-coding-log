@@ -1,0 +1,169 @@
+What is a beautiful array?
+
+All even numbers must come before all odd numbers.
+
+And the order among evens and among odds must not change.
+
+Example:
+
+3 2 1 4 5 6
+
+Evens:
+
+2 4 6
+
+Odds:
+
+3 1 5
+
+Since relative order must remain the same, the final array must be:
+
+2 4 6 3 1 5
+
+You cannot make:
+
+6 4 2 3 1 5
+
+because the order of evens changed.
+
+What does "adjacent swaps only" mean?
+
+You can swap only neighbors.
+
+Example:
+
+3 2 1
+
+Swap:
+
+2 3 1
+
+1 adjacent swap.
+
+Key Observation
+
+Whenever an odd number appears before an even number, that pair is "wrong".
+
+Example:
+
+3 2
+
+Odd before even.
+
+To fix it:
+
+3 2
+↓
+2 3
+
+Needs 1 adjacent swap.
+
+Let's analyze the sample
+3 2 1 4 5 6
+
+Mark:
+
+O E O E O E
+
+Count odd-even inversions.
+
+For 3
+
+Even numbers after it:
+
+2, 4, 6
+
+Contribution:
+
+3 swaps
+For 1
+
+Even numbers after it:
+
+4, 6
+
+Contribution:
+
+2 swaps
+For 5
+
+Even numbers after it:
+
+6
+
+Contribution:
+
+1 swap
+
+Total:
+
+3 + 2 + 1 = 6
+
+Answer:
+
+6
+Another way to think
+
+Convert array to:
+
+Odd  = 1
+Even = 0
+
+Sample:
+
+1 0 1 0 1 0
+
+Count pairs:
+
+(1 before 0)
+
+Each such pair requires exactly one adjacent swap.
+
+This is exactly the inversion count.
+
+Efficient Approach
+
+Keep track of how many odds have appeared so far.
+
+Whenever you see an even:
+
+all previous odds must cross this even
+
+So:
+
+swaps += oddCount;
+Dry Run
+3 2 1 4 5 6
+3 -> oddCount = 1
+
+2 -> swaps += 1 = 1
+
+1 -> oddCount = 2
+
+4 -> swaps += 2 = 3
+
+5 -> oddCount = 3
+
+6 -> swaps += 3 = 6
+
+Answer:
+
+6
+Simple Java Code
+long swaps = 0;
+long oddCount = 0;
+
+for (int x : arr) {
+    if (x % 2 != 0) {
+        oddCount++;
+    } else {
+        swaps += oddCount;
+    }
+}
+
+System.out.println(swaps);
+Concept Involved
+Parity (odd/even)
+Inversion Counting
+Greedy counting
+Adjacent swaps = number of inversions

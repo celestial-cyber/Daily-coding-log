@@ -1,0 +1,151 @@
+his problem is harder than it looks because of the word distinct.
+
+Example
+
+For:
+
+aaaa
+
+Valid substrings are:
+
+aa
+aaa
+aaaa
+
+Output:
+
+3
+
+Even though "aa" occurs multiple times, it is counted once.
+
+Why brute force won't work
+
+There are:
+
+O(n²)
+
+substrings.
+
+With |S| = 100000, generating all substrings is impossible.
+
+Key Idea: Suffix Automaton (SAM)
+
+A Suffix Automaton stores all distinct substrings of a string.
+
+Instead of enumerating substrings, we count only the distinct ones represented in the automaton.
+
+Observation
+
+We need distinct substrings such that:
+
+Length ≥ 2
+First character = Last character
+
+Suppose we are at the root of the SAM.
+
+For every transition:
+
+root --(c)--> state u
+
+Any valid substring must:
+
+start with c
+end with c
+have length ≥ 2
+
+So after taking the first character c, we need a non-empty continuation from u whose last character is also c.
+
+DP on SAM
+
+Let:
+
+dp[state][ch]
+
+= number of distinct strings obtainable from state
+that end with character ch.
+
+Recurrence
+
+For every transition:
+
+state --(x)--> next
+The one-character string "x" contributes:
+dp[state][x] += 1
+Any string from next ending with character c
+can be prefixed with x:
+dp[state][c] += dp[next][c]
+
+Because the SAM is a DAG, this DP can be computed in decreasing order of state length.
+
+Final Answer
+
+For every root transition:
+
+root --(c)--> u
+
+count:
+
+dp[u][c]
+
+Why?
+
+We already used the first character c.
+dp[u][c] counts all non-empty suffixes ending in c.
+Therefore:
+c + suffix
+
+starts with c, ends with c, and has length at least 2.
+
+So:
+
+answer = Σ dp[u][c]
+
+over all root transitions.
+
+Complexity
+Building SAM: O(n)
+DP: O(26 × number_of_states)
+Number of states ≤ 2n
+
+So:
+
+Time:  O(26·n)
+Space: O(26·n)
+
+which works comfortably for n = 100000.
+
+
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.next();
+
+        // HashSet stores only unique substrings
+        Set<String> set = new HashSet<>();
+
+        int n = s.length();
+
+        // Generate all possible substrings
+        for (int i = 0; i < n; i++) {
+
+            // Start j from i+1 because length must be >= 2
+            for (int j = i + 1; j < n; j++) {
+
+                // Check first and last character
+                if (s.charAt(i) == s.charAt(j)) {
+
+                    // Extract substring from i to j
+                    String sub = s.substring(i, j + 1);
+
+                    // HashSet automatically removes duplicates
+                    set.add(sub);
+                }
+            }
+        }
+
+        System.out.println(set.size());
+    }
+}

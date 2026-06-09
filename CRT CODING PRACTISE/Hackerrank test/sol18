@@ -1,0 +1,314 @@
+This question has two important keywords:
+
+```text
+1. Distinct substrings
+2. Exactly K distinct characters
+```
+
+These two together make it much harder than the usual sliding-window problem.
+
+---
+
+## Let's understand the examples
+
+### Example 1
+
+```text
+S = "abc"
+K = 2
+```
+
+Substrings:
+
+```text
+a      -> 1 distinct
+ab     -> 2 distinct ✓
+abc    -> 3 distinct
+b      -> 1 distinct
+bc     -> 2 distinct ✓
+c      -> 1 distinct
+```
+
+Distinct valid substrings:
+
+```text
+ab
+bc
+```
+
+Answer:
+
+```text
+2
+```
+
+---
+
+### Example 2
+
+```text
+S = "aaa"
+K = 1
+```
+
+Substrings:
+
+```text
+a
+aa
+aaa
+a
+aa
+a
+```
+
+Unique substrings:
+
+```text
+a
+aa
+aaa
+```
+
+Answer:
+
+```text
+3
+```
+
+---
+
+### Example 3
+
+```text
+S = "abab"
+K = 2
+```
+
+Valid unique substrings:
+
+```text
+ab
+ba
+aba
+bab
+abab
+```
+
+Answer:
+
+```text
+5
+```
+
+---
+
+# What concept is involved?
+
+Many students immediately think:
+
+```text
+Sliding Window
+```
+
+But Sliding Window only counts:
+
+```text
+number of substrings
+```
+
+It does NOT handle:
+
+```text
+distinct substrings
+```
+
+because:
+
+```text
+abab
+```
+
+contains `"ab"` multiple times.
+
+We must count it only once.
+
+---
+
+# Brute Force Idea
+
+Generate every substring:
+
+```java
+for(i)
+   for(j)
+```
+
+Check:
+
+```java
+distinct characters == K
+```
+
+Store in:
+
+```java
+HashSet<String>
+```
+
+Finally:
+
+```java
+set.size()
+```
+
+---
+
+### Code
+
+```java
+HashSet<String> set = new HashSet<>();
+
+for(int i=0;i<n;i++) {
+
+    int[] freq = new int[26];
+    int distinct = 0;
+
+    for(int j=i;j<n;j++) {
+
+        int idx = s.charAt(j)-'a';
+
+        if(freq[idx]==0)
+            distinct++;
+
+        freq[idx]++;
+
+        if(distinct==K)
+            set.add(s.substring(i,j+1));
+
+        if(distinct>K)
+            break;
+    }
+}
+
+System.out.println(set.size());
+```
+
+---
+
+## Complexity
+
+```text
+O(n²)
+```
+
+This works for:
+
+```text
+n ≤ 1000
+```
+
+but NOT for:
+
+```text
+n = 100000
+```
+
+---
+
+# If the constraint 10^5 is genuine
+
+Then the intended solution involves:
+
+```text
+Suffix Automaton
+or
+Suffix Array + LCP
+```
+
+combined with character-frequency tracking.
+
+Reason:
+
+```text
+Distinct Substrings
+```
+
+is usually a giveaway for:
+
+```text
+Suffix Automaton
+Suffix Array
+Trie of suffixes
+Rolling Hash
+```
+
+rather than pure Sliding Window.
+
+---
+
+# Interview / Contest Hint
+
+Whenever you see:
+
+```text
+Count substrings
+```
+
+→ Sliding Window may work.
+
+Whenever you see:
+
+```text
+Count DISTINCT substrings
+```
+
+→ Think:
+
+```text
+HashSet (small constraints)
+Suffix Automaton / Suffix Array (large constraints)
+```
+
+That's the key pattern this problem is testing.
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.next();
+        int k = sc.nextInt();
+
+        HashSet<String> set = new HashSet<>();
+
+        int n = s.length();
+
+        for (int i = 0; i < n; i++) {
+
+            int[] freq = new int[26];
+            int distinct = 0;
+
+            for (int j = i; j < n; j++) {
+
+                int idx = s.charAt(j) - 'a';
+
+                if (freq[idx] == 0)
+                    distinct++;
+
+                freq[idx]++;
+
+                if (distinct == k) {
+                    set.add(s.substring(i, j + 1));
+                }
+
+                // Once distinct characters exceed K,
+                // extending the substring can never bring it back to K
+                if (distinct > k)
+                    break;
+            }
+        }
+
+        System.out.println(set.size());
+    }
+}
