@@ -40,7 +40,7 @@ Final Result = -6
 import java.io.*;
 import java.util.*;
 
-public class Solution {
+public class sol6 {
 
     public static void main(String[] args) {
 
