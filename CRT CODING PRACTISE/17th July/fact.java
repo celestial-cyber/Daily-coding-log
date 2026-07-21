@@ -1,0 +1,32 @@
+//5.	If input is 5 we need to print factorial of that number i.e 5*4*3*2*1 = 120
+
+import java.util.*;
+class fact{
+    static int fact(int n){
+        //base condtiiton 
+        if(n==0 || n==1){
+            return 1;
+             }
+        return n*fact(n-1);
+       
+
+}
+public static void main(String args[]){
+    Scanner sc = new Scanner(System.in);
+    int n = sc.nextInt();
+    int res = fact(n);
+    System.out.print(res);
+
+}
+}
+
+
+
+
+
+
+
+
+
+
+
