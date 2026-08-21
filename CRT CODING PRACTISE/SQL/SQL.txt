@@ -213,3 +213,68 @@ Here’s a **structured SQL roadmap** from **basic → interview/OA level**, foc
 149. Most sold product
 150. Find percentage contribution
 
+
+
+
+
+
+===============================================================================================================
+//21 August 2026
+===============================================================================================================
+Data -> collection of raw facts, figures, observations, that can be processed and analyzed to derive meaningful insights
+example - social media, sensors, browsing history
+
+Data bases - an organsied collection is called database - there are two types - relational and non relational
+
+Relational Databases - the database where the data is organised in the form of tables 
+Non relational Databases The database where the data is not organised in the form of tables 
+
+DBMS 
+Database management system - here there both the types of data exists 
+RDMS - Relational Database Management System - its designed for a relational databases and organises the data in the form of tables 
+Examples - Here exists Oracle, MySQL, Sql Server  etc 
+
+Non relational databases - Its designed for a non relational databases adn organsies data that are not in the form of tables 
+Example - MongoDB, Ksandra, elastic search etc 
+============================================================================================================================
+
+Introduction for SQL 
+
+SQL is a language which deals with relatinal database management system and act as bridge between database and the management System
+
+Creating Databases db_name;
+
+to create table 
+create table table_name ( column_1 datatype);
+
+create table emp(
+    empname varchar(10), empID int, emppho int, gender varchar );
+    
+
+INSERT into table_name(col_1, col_2, col_2............n)
+values 
+    (value_1, value_2............),
+    (value_a, value_b............);
+
+
+    insert into emp(empname, empid, empphone, empgender) values ('ramu',01, 3456789012, 'male')
+
+
+to retrieve - select * from tablename;
+
+
+to retirive a column - select column_name from <table_name>
+
+to retrieve a row - select * from table_name where condition; example - select 8 from emp where empID =3;
+
+===================================================================================================================
+
+Update query
+-------------
+to update specific value in the table - update table_name set column_name = new_value where column_1 = value_1; 
+
+Update emp set empname= 'raju' where empname = 'raj';
+
+
+
+
