@@ -276,5 +276,35 @@ to update specific value in the table - update table_name set column_name = new_
 Update emp set empname= 'raju' where empname = 'raj';
 
 
+=================================================
+to update a full column - update table_name set column = value_1;
+
+to update different row with different values in a single query 
+Update <table_name> set <column_name>= CASE col2 
+when values_1 then value_1 (new value)
+when value-2 then value-2 (new value)
+END;
+
+update emp 
+set empgen = CASE empid 
+when 1 then 'm'
+when 2 then 'f'
+when 3 then 'm'
+END;
+
+
+
+update phone numbers based on employee name 
+set empphone = Case empname 
+when 'raju' then 893892388
+when 'priya' then 3978982747
+END;
+
+================================================================
+Alter 
+
+
+
+
 
 
