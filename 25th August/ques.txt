@@ -1,0 +1,7 @@
+Chary Session session 
+ques 1-> 
+program t extract the last two digitd from a given year 
+example 2022 output 22 
+
+program2 - to find cube from 1 to N in java 
+program 3 = given an interger number and we have to count its factors using java program
