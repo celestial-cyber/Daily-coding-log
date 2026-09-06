@@ -1,0 +1,215 @@
+Here’s a **structured SQL roadmap** from **basic → interview/OA level**, focused on the **most frequently asked SQL questions** in internships, placements, and interviews.
+
+## 1. Basics (Queries + Filtering)
+
+1. Select all records from a table
+2. Select specific columns
+3. Use `DISTINCT`
+4. Filter data using `WHERE`
+5. Use comparison operators (`=`, `>`, `<`, `!=`)
+6. Use `AND`, `OR`, `NOT`
+7. Use `BETWEEN`
+8. Use `IN`
+9. Use `LIKE` with `%` and `_`
+10. Handle `NULL` values (`IS NULL`, `IS NOT NULL`)
+11. Sort using `ORDER BY`
+12. Sort ascending/descending
+13. Limit rows using `LIMIT` / `TOP`
+14. Alias columns using `AS`
+15. Concatenate columns
+
+---
+
+## 2. Aggregate Functions
+
+16. `COUNT()`
+17. `SUM()`
+18. `AVG()`
+19. `MIN()`
+20. `MAX()`
+21. Count distinct values
+22. Aggregate with conditions
+23. Find total salary in department
+24. Find highest/lowest salary
+25. Find average marks/salary
+
+---
+
+## 3. Grouping & Filtering Groups
+
+26. `GROUP BY` basics
+27. `HAVING` clause
+28. Count employees per department
+29. Department with highest salary
+30. Average salary department-wise
+31. Find duplicate records using `GROUP BY`
+32. Count occurrences of values
+33. Departments with more than X employees
+34. Highest marks per subject
+35. Monthly sales report
+
+---
+
+## 4. String Functions
+
+36. `UPPER()`
+37. `LOWER()`
+38. `LENGTH()` / `LEN()`
+39. `SUBSTRING()`
+40. `TRIM()`
+41. `REPLACE()`
+42. `CONCAT()`
+43. Extract first/last name
+44. Remove spaces
+45. Find names starting with specific character
+
+---
+
+## 5. Date & Time Functions
+
+46. Current date/time
+47. Add days/months
+48. Difference between dates
+49. Extract month/year/day
+50. Find employees joined after a date
+51. Find records in last 30 days
+52. Monthly/yearly grouping
+53. Age calculation
+54. Orders placed this month
+55. Find weekday/weekend entries
+
+---
+
+## 6. Joins (Most Important)
+
+56. Inner Join
+57. Left Join
+58. Right Join
+59. Full Join
+60. Self Join
+61. Cross Join
+62. Employee–Department join
+63. Customers with no orders
+64. Orders with customer names
+65. Find unmatched records
+66. Join 3 tables
+67. Many-to-many relationship query
+68. Duplicate rows using joins
+69. Compare inner vs left join
+70. Self join for manager-employee relation
+
+---
+
+## 7. Subqueries
+
+71. Scalar subquery
+72. Correlated subquery
+73. Nested subquery
+74. Find 2nd highest salary
+75. Find nth highest salary
+76. Employee earning more than average salary
+77. Department with max salary
+78. Exists vs In
+79. Find records not present in another table
+80. Highest salary employee per department
+
+---
+
+## 8. Window Functions (Very Frequently Asked)
+
+81. `ROW_NUMBER()`
+82. `RANK()`
+83. `DENSE_RANK()`
+84. Running total
+85. Partition by department
+86. Top 3 salaries in each department
+87. Find duplicate rows
+88. Consecutive rows problem
+89. Lead & Lag functions
+90. Compare previous row values
+
+---
+
+## 9. Case Statements
+
+91. Use `CASE WHEN`
+92. Grade classification
+93. Salary category classification
+94. Conditional aggregation
+95. Replace nulls conditionally
+
+---
+
+## 10. Constraints & Keys
+
+96. Primary Key
+97. Foreign Key
+98. Unique Key
+99. Composite Key
+100. Check Constraint
+101. Default Constraint
+102. Not Null Constraint
+103. Candidate Key
+104. Super Key
+105. Difference between PK and FK
+
+---
+
+## 11. Normalization & Database Design
+
+106. 1NF
+107. 2NF
+108. 3NF
+109. BCNF basics
+110. Denormalization
+111. Database schema design
+112. ER diagrams
+113. Relationships (1-1, 1-M, M-M)
+
+---
+
+## 12. Advanced SQL (Interview Heavy)
+
+114. Common Table Expressions (CTE)
+115. Recursive CTE
+116. Views
+117. Materialized Views
+118. Stored Procedures
+119. Functions
+120. Triggers
+121. Indexes
+122. Clustered vs Non-clustered Index
+123. Transactions (`COMMIT`, `ROLLBACK`)
+124. ACID properties
+125. Deadlock basics
+126. SQL Injection basics
+127. Optimization basics
+128. Query execution plan
+129. Temporary tables
+130. Pivot / Unpivot
+
+---
+
+## 13. Most Frequently Asked Interview Queries
+
+131. Find duplicate records
+132. Delete duplicate rows
+133. Find 2nd highest salary
+134. Find nth highest salary
+135. Top 3 salaries per department
+136. Employees without manager
+137. Employees earning above average
+138. Customers with no orders
+139. Find consecutive login days
+140. Running total of sales
+141. Rank employees by salary
+142. Department-wise highest salary
+143. Find missing IDs
+144. Find duplicate emails
+145. Swap values in column
+146. Cumulative sum
+147. Pivot rows into columns
+148. Remove duplicates keeping latest row
+149. Most sold product
+150. Find percentage contribution
+
